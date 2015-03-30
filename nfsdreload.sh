@@ -6,5 +6,7 @@ lsmod | grep nfsd
 rmmod nfsd
 lsmod | grep nfsd
 cp -f fs/nfsd/nfsd.ko /lib/modules/`uname -r`/kernel/fs/nfsd/nfsd.ko
+service rpcbind start
+sleep 1s
 service nfs start
 service nfs status
