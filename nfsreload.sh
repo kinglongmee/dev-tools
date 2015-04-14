@@ -1,4 +1,4 @@
-rmmod nfs_layout_nfsv41_files nfs_layout_flexfiles blocklayoutdriver nfsv4 nfs fscache
+rmmod nfs_layout_nfsv41_files nfs_layout_flexfiles blocklayoutdriver nfsv2 nfsv3 nfsv4 nfs fscache
 lsmod | grep nfs
 cp -f fs/nfs/blocklayout/blocklayoutdriver.ko /lib/modules/`uname -r`/kernel/fs/nfs/blocklayout/
 cp -f fs/nfs/filelayout/nfs_layout_nfsv41_files.ko /lib/modules/`uname -r`/kernel/fs/nfs/filelayout/
