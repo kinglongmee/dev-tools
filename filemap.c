@@ -20,7 +20,7 @@ static void output_filemap(char *filename)
 	char *smsg = NULL;
 	int parti = 1;
 
-	printf("Filemap for %s, size=%ld,\n", filename, regstat.st_size);
+	printf("Filemap of %s, size=%ld,\n", filename, regstat.st_size);
 
 	while (1) {
 		next_pos = lseek(fd, cur_pos, seek_type);
@@ -39,13 +39,13 @@ static void output_filemap(char *filename)
 
 		if (next_pos == -1) {
 			if (cur_pos != regstat.st_size) {
-				printf("Part%5d: %s 0x%010llx ---> 0x%010llx\n",
+				printf("Part%5d: %s 0x%016llx ---> 0x%016llx\n",
 					parti++, smsg, cur_pos, regstat.st_size);
 			}
 			return ;
 		}
 
-		printf("Part%5d: %s 0x%010llx ---> 0x%010llx\n",
+		printf("Part%5d: %s 0x%016llx ---> 0x%016llx\n",
 			parti++, smsg, cur_pos, next_pos);
 		cur_pos = next_pos;
 	}
